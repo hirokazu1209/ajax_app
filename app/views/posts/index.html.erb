@@ -1,0 +1,31 @@
+<h1>Top page</h1>
+<%# 以下、不要の場合は削除 %>
+<%= @post %>
+<%# 単一のカラムデータ取得をする場合（変数名は単数 ※変数名は何でも良いが、分かりやすい表記にする） %>
+<%# <%= @post.content %>
+<%# <%= @post.created_at %>
+
+<%# 全てのカラムデータ取得をする場合（変数名は複数 ※変数名は何でも良いが、分かりやすい表記にする） %>
+<%# 順番に呼び出すメソッドが入っていないため、エラーが出る %>
+<%# <%= @posts.content %>
+<%# <%= @posts.created_at %>
+
+<%# eachメソッドを活用して配列の要素1つずつに繰り返し処理をする %>
+<%# <% @posts.each do |post| %>
+  <%# <%= post.content %>
+  <%# <%= post.created_at %>
+<%# <% end %>
+
+<%#  「GETメソッド」・「posts/new」というリクエスト情報を、リンク内に埋め込み%>
+<%= link_to '新規投稿', '/posts/new' %>
+
+<% @posts.each do |post| %>
+  <div class="post">
+    <div class="post-date">
+      投稿日時：<%= post.created_at %>
+    </div>
+    <div class="post-content">
+      <%= post.content %>
+    </div>
+  </div>
+<% end %>
