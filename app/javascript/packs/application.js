@@ -7,6 +7,9 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+// require("<該当ファイルをパスで指定>")のように記述することで、ファイルを読み込む事が可能
+// 「..」は、「一つ上の階層」を意味
+require("../memo")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
