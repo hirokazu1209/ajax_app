@@ -11,9 +11,10 @@ class PostsController < ApplicationController
 
   def create
     # フォームから送信されたパラメーターを利用して、createメソッドの引数に記述
-    Post.create(content: params[:content])
-    # メモを保存した後にトップページへリダイレクト
-    redirect_to action: :index
+    # 新たに投稿されたメモの内容を変数postに格納
+    post = Post.create(content: params[:content])
+    # { post: post }というデータをJSON形式で返却
+    render json:{ post: post }
   end
  
  end
